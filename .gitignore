@@ -1,2 +1,11 @@
 # .gitignore
+.venv/
 __pycache__/
+preprocessing/__pycache__/
+data/__pycache__/
+models/__pycache__/
+deployment/__pycache__/
+training/__pycache__/
+notebooks/__pycache__/
+logs/
+*.pyc
