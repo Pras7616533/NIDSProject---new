@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card p-4 text-center">
+    <h4>Intrusion Detection Results</h4>
+    
+    <p><strong>Total Records:</strong> {{ total }}</p>
+    
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <div class="alert alert-success">
+                Normal Traffic: {{ normal }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="alert alert-danger">
+                Attack Traffic: {{ attacks }}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Chart Canvas -->
+    <canvas id="trafficChart" height="120"></canvas>
+    <!-- <canvas id="barChart" height="120" class="mt-4"></canvas> -->
+    
+    <a href="/" class="btn btn-primary mt-4">Analyze Another File</a>
+    <a href="/download" class="btn btn-success mt-3">
+        Download PDF Report
+    </a>
+</div>
+
+<!-- Bar Chart -->
+
+<script>
+// const barCtx = document.getElementById('barChart');
+const ctx = document.getElementById('trafficChart');
+
+new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Normal', 'Attack'],
+        datasets: [{
+            data: [{{ normal }}, {{ attacks }}],
+            backgroundColor: [
+                'rgba(40, 167, 69, 0.7)',
+                'rgba(220, 53, 69, 0.7)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom'
+            },
+            title: {
+                display: true,
+                text: 'Attack vs Normal Traffic Distribution'
+            }
+        }
+    }
+});
+
+// new Chart(barCtx, {
+//     type: 'bar',
+//     data: {
+//         labels: ['Normal', 'Attack'],
+//         datasets: [{
+//             label: 'Traffic Count',
+//             data: [{{ normal }}, {{ attacks }}],
+//             backgroundColor: [
+//                 'rgba(40, 167, 69, 0.7)',
+//                 'rgba(220, 53, 69, 0.7)'
+//             ]
+//         }]
+//     },
+//     options: {
+//         responsive: true,
+//         plugins: {
+//             legend: { display: true },
+//             title: {
+//                 display: true,
+//                 text: 'Attack vs Normal Traffic (Bar Graph)'
+//             }
+//         }
+//     }
+// });
+</script>
+
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+{% endblock %}
