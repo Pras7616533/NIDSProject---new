@@ -27,47 +27,6 @@ The system consists of four main modules:
 
 ---
 
-## 📂 Project Structure
-
-```
-NIDSProject---new/
-│
-├── main.py                    # Model training & evaluation
-├── app.py                     # Flask web application
-├── README.md
-│
-├── NSL_KDD.csv                # Dataset
-│
-├── preprocessing/
-│   ├── data_cleaning.py
-│   └── feature_engineering.py
-│
-├── models/
-│   └── dnn_model.py
-│
-├── training/
-│   └── callbacks.py
-│
-├── evaluation/
-│   └── evaluate_model.py
-│
-├── saved_models/
-│   └── dnn_final_model.h5
-│
-├── templates/
-│   ├── base.html
-│   ├── login.html
-│   ├── index.html
-│   ├── result.html
-│   └── admin.html
-│
-└── static/
-    ├── style.css
-    └── dark.css
-```
-
----
-
 ## 📊 Dataset Used
 
 * **Dataset Name:** NSL-KDD
@@ -257,5 +216,5 @@ It is suitable for:
 
 ## 👨‍💻 Author
 
-* **Team of DeepNIDS**
-* Diploma Project – Network Intrusion Detection System
+**Team of DeepNIDS**<br>
+Diploma Project – Network Intrusion Detection System
