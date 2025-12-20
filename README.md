@@ -257,5 +257,5 @@ It is suitable for:
 
 ## 👨‍💻 Author
 
-**Team of DeepNIDS**
-Diploma Project – Network Intrusion Detection System
+* **Team of DeepNIDS**
+* Diploma Project – Network Intrusion Detection System
