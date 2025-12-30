@@ -11,8 +11,6 @@ from models.dnn_model import build_dnn
 from training.callbacks import get_callbacks
 from evaluation.evaluate_model import evaluate_model
 
-
-
 def main():
     print("\nLoading dataset...")
     df = pd.read_csv("data/raw/NSL_KDD.csv")
@@ -100,7 +98,7 @@ def main():
     print("\nModel training completed successfully!")
 
     # ---------------- SAVE FINAL MODEL ----------------
-    model.save("saved_models/dnn_final_model.h5")
+    model.save("saved_models/original_model.h5")
     print("Final model saved as dnn_final_model.h5")
 
     # ---------------- STEP 10: Model Evaluation ----------------

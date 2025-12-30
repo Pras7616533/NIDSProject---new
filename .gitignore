@@ -9,3 +9,4 @@ training/__pycache__/
 notebooks/__pycache__/
 logs/
 *.pyc
+saved_models/

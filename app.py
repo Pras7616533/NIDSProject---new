@@ -9,14 +9,16 @@ from flask import send_file
 
 import os
 
+from model_loader import load_nids_model
 from preprocessing.feature_engineering import encode_features
 
 app = Flask(__name__)
 app.secret_key = "deepnids_secret"
 
 # Load trained model
-MODEL_PATH = "saved_models/dnn_final_model.h5"
-model = load_model(MODEL_PATH)
+MODEL_WEIGHTS = "saved_models/nids_weights.h5"
+model = load_nids_model(MODEL_WEIGHTS)
+
 
 # Global scaler (same logic as training)
 scaler = StandardScaler()
